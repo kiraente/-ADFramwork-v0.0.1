@@ -1,0 +1,13 @@
+E:\HoangUnityProject\Framework\obj\Debug\UnityVS.Framework.CSharp.csprojResolveAssemblyReference.cache
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEditor.dll
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEngine.dll
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEngine.xml
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEditor.xml
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+E:\HoangUnityProject\Framework\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
+E:\HoangUnityProject\Framework\obj\Debug\Assembly-CSharp.dll
+E:\HoangUnityProject\Framework\obj\Debug\Assembly-CSharp.pdb
