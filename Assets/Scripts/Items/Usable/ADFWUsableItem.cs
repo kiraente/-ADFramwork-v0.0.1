@@ -14,6 +14,10 @@ namespace ADFramework.ItemCollections.UseableItemCollections
         {
             _Qty--;            
         }
+        public void ADFWAddToStack(int qty)
+        { 
+            
+        }
         public ADFWUsableItem(): base()
         {
             _ItemType.Add(enumADFWItemType.Usable, true);

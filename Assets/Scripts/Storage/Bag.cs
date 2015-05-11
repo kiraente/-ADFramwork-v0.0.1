@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace ADFramework.StorageCollections
 {
-    public class Bag : ADFWStorage
+    public class ADFWBag : ADFWStorage
     {
 
     }

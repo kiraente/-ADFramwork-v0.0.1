@@ -43,10 +43,10 @@ namespace ADFramework.ItemCollections
         {
             get { return _ItemAttributes; }
         }
-        public bool Equals(ADFWItem obj, ADFWItem compare)
+        public bool Equals(ADFWItem compare)
         {
             bool rtValue = false;
-            if (obj.ADFWItemType==compare.ADFWItemType && obj.ADFWName==compare.ADFWName)
+            if (this.ADFWItemType==compare.ADFWItemType && this.ADFWName==compare.ADFWName)
             {
                 rtValue= true;
             }

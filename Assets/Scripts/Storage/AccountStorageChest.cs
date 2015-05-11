@@ -5,14 +5,14 @@ using ADFramework.ItemCollections.UseableItemCollections;
 
 namespace ADFramework.StorageCollections
 {
-    public sealed class AccountStorageChest : ADFWStorage
+    public sealed class ADFWAccountStorageChest : ADFWStorage
     {
         private int _ActiveStorageSize;
         private ADFWItem[] _StoredItems;
 
 
         #region Constructor
-        public AccountStorageChest(GameObject onwner)
+        public ADFWAccountStorageChest()
         {
             _StorageName = "Account Shared Storage Chest";
             _StorageType = enumADFWStorageType.Account;

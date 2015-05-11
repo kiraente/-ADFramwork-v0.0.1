@@ -2,6 +2,8 @@
 using System.Collections;
 using ADFramework.IStorageCollections;
 using ADFramework.ItemCollections;
+using System;
+
 namespace ADFramework.StorageCollections
 {
     
@@ -39,6 +41,7 @@ namespace ADFramework.StorageCollections
         #endregion
 
         #region Constructors
+        public ADFWStorage() { }
         public ADFWStorage(string storagedesc,string storagename, int size,enumADFWStorageType storagetype, GameObject owner)
         {
             _StorageDesc = "";
@@ -58,7 +61,13 @@ namespace ADFramework.StorageCollections
                 
                 if (obj.ADFWItemType.ContainsKey(enumADFWItemType.Usable))
                 { 
+                    if (obj.Equals(target))
+                    {
+                        //useable item, and they are both the same
+                        //get the total allow
                     
+                    }
+
                 }
                 if (obj.ADFWItemType.ContainsKey(enumADFWItemType.Misc))
                 { 
