@@ -7,7 +7,7 @@ namespace ADFramework.ItemCollections.UseableItemCollections.Potions
 {
     
 
-    public class ADFWStarterHealthPotion:ADFWPotion
+    public sealed class ADFWStarterHealthPotion:ADFWPotion
     {
         //starter information.
         //usage: remove the // and change the numbers at the end when you have a set your desired values

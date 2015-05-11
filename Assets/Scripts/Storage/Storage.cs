@@ -57,24 +57,13 @@ namespace ADFramework.StorageCollections
         #region Interface implementation
         public void ItemStack(ADFWItem obj, ADFWItem target) 
         {
-            if (obj.ADFWItemAttributes.ContainsKey(enumADFWItemAttributes.CanBeStack))
-            { 
-                //check if type is usable or misc and cast object to that 
-                
-                if (obj.ADFWItemType.ContainsKey(enumADFWItemType.Usable))
-                { 
-                    if (obj.Equals(target))
-                    {
-                        //useable item, and they are both the same
-                        //return the left over , and if left over is 0 , destroy
-                                              
-                    }
-
+            if (obj.Equals(target))
+            {
+                if (obj.ADFWItemAttributes.ContainsKey(enumADFWItemAttributes.CanBeStack))
+                {
+                    obj.ADFWQuantity = obj.ADFWAddToStack(target);
+                    if (obj.ADFWQuantity <= 0) { Destroy(obj); }
                 }
-                if (obj.ADFWItemType.ContainsKey(enumADFWItemType.Misc))
-                { 
-                }
-
 
             }
         }

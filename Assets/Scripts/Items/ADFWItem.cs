@@ -26,6 +26,11 @@ namespace ADFramework.ItemCollections
             get { return _ItemType; }
         }
         public int ADFWStackingQty { get { return _StackingQty; } }
+        public int ADFWQuantity
+        {
+            get { return _Qty; }
+            set { _Qty = value; }
+        }
         public int ADFWSellingPrice { get { return _SellingPrice; } }
         public int ADFWBuyingPrice { get { return _BuyingPrice; } }
         public Guid ADFWID { get { return _ID; } }
@@ -38,6 +43,19 @@ namespace ADFramework.ItemCollections
         {
             get { return _Desc; }
             set { _Desc = value; }
+        }
+        public int ADFWAddToStack(ADFWItem target)
+        {
+            int tmp = _Qty + target.ADFWQuantity - _StackingQty;
+            if (tmp >0)
+            {
+                target.ADFWQuantity = _StackingQty;
+            }
+            else
+            {
+                target.ADFWQuantity = tmp;
+            }
+            return tmp;
         }
         public Dictionary<enumADFWItemAttributes, bool> ADFWItemAttributes
         {
