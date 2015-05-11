@@ -2,6 +2,8 @@
 using System.Collections;
 using ADFramework.IStorageCollections;
 using ADFramework.ItemCollections;
+using ADFramework.ItemCollections.UseableItemCollections;
+using ADFramework.ItemCollections.UseableItemCollections.Potions;
 using System;
 
 namespace ADFramework.StorageCollections
@@ -64,8 +66,8 @@ namespace ADFramework.StorageCollections
                     if (obj.Equals(target))
                     {
                         //useable item, and they are both the same
-                        //get the total allow
-                    
+                        //return the left over , and if left over is 0 , destroy
+                                              
                     }
 
                 }

@@ -4,13 +4,11 @@ using System;
 
 namespace ADFramework.ItemCollections.UseableItemCollections.Potions
 {
-
-    public class ADFWHealthPotion : ADFWUsableItem
+    public class ADFWPotion : ADFWUsableItem
     {
        
         #region Constructors
-        
-        public ADFWHealthPotion(string name, string desc,int sprice,int bprice,int stacktotal ):base()
+        public ADFWPotion(string name, string desc,int sprice,int bprice,int stacktotal):base()
         {
             _Name = name;
             _Desc = desc;
@@ -20,8 +18,6 @@ namespace ADFramework.ItemCollections.UseableItemCollections.Potions
             _ItemAttributes.Add(enumADFWItemAttributes.CanBeStack, false);
  
         }
-        
-
         #endregion
 
     }

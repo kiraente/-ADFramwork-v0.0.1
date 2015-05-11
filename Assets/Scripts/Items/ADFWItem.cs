@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ADFramework.ItemCollections
 {
-    public class ADFWItem : ADFWBaseItem,IEquatable<ADFWItem>
+    public class ADFWItem : ADFWBaseItem,IEquatable<ADFWItem> /// this is a concreate of all items in the project
     {
         //abstract item properties, item is concrete and inherits monobehavior from baseiteme
         protected int _Qty;
@@ -28,7 +28,7 @@ namespace ADFramework.ItemCollections
         public int ADFWStackingQty { get { return _StackingQty; } }
         public int ADFWSellingPrice { get { return _SellingPrice; } }
         public int ADFWBuyingPrice { get { return _BuyingPrice; } }
-        
+        public Guid ADFWID { get { return _ID; } }
         public override string ADFWName
         {
             get { return _Name; }
@@ -43,15 +43,16 @@ namespace ADFramework.ItemCollections
         {
             get { return _ItemAttributes; }
         }
+        
         public bool Equals(ADFWItem compare)
         {
             bool rtValue = false;
-            if (this.ADFWItemType==compare.ADFWItemType && this.ADFWName==compare.ADFWName)
+            if (this._ID==compare.ADFWID)
             {
                 rtValue= true;
             }
             return rtValue;
-        }
+        }///compares two item based on guid;
 
         #region constructor
         public ADFWItem()

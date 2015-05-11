@@ -14,8 +14,9 @@ namespace ADFramework.ItemCollections.UseableItemCollections
         {
             _Qty--;            
         }
-        public void ADFWAddToStack(int qty)
-        { 
+        public int ADFWAddToStack(int qty)
+        {
+            return 0; 
             
         }
         public ADFWUsableItem(): base()
