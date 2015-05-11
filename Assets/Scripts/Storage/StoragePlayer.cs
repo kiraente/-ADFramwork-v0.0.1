@@ -3,7 +3,7 @@ using System.Collections;
 using ADFramework.StorageCollections;
 using ADFramework.IStorageCollections;
 
-public class StoragePlayer : Storage, IStorageItemTrashable<GameObject>, IStorageItemMoveable<GameObject>, IStorageItemSwitchable<GameObject>, IStorageItemStackable<GameObject>, IStorageItemSplitable<GameObject>,IStorageItemReOrganizeable
+public class StoragePlayer : ADFWStorage, IStorageItemTrashable<GameObject>, IStorageItemMoveable<GameObject>, IStorageItemSwitchable<GameObject>, IStorageItemStackable<GameObject>, IStorageItemSplitable<GameObject>,IStorageItemReOrganizeable
 {
     public void ItemTrash(GameObject obj) { 
         Destroy(obj); 

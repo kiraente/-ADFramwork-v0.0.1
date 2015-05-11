@@ -1,27 +1,77 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using ADFramework.IStorageCollections;
+using ADFramework.ItemCollections;
 namespace ADFramework.StorageCollections
 {
-    public abstract class Storage : MonoBehaviour
+    
+    public  class ADFWStorage :ADFWBaseStorage, IStorageItemStackable<ADFWItem>,IStorageItemSwitchable<ADFWItem>,IStorageItemTrashable<ADFWItem>
     {
-        //properties of a bag
-        //and methods a bag can do
-
-        protected string _StorageName;
-        protected string _StorageDesc;
-        protected string _StorageType;
-        protected int _StorageSize;
+        #region Members
         protected GameObject _Owner;
+        #endregion
 
         #region Properties
-        public abstract string StorageName { get; set; }
-        public abstract string StorageDescription { get; set; }
-        public abstract string StorageType { get; set; }
-        public abstract int StorageSize { get; set; }
-        public abstract GameObject Owner { get; }
-
-
+        public override string ADFWStorageName
+        {
+            get { return _StorageName; }
+            set { _StorageName = value; }
+        }
+        public override string ADFWStorageDescription
+        {
+            get { return _StorageDesc; }
+            set { _StorageDesc = value; }
+        }
+        public override enumADFWStorageType ADFWStorageType
+        {
+            get { return _StorageType; }
+            set { _StorageType = value; }
+        }
+        public override int ADFWStorageSize
+        {
+            get { return _StorageSize; }
+            set { _StorageSize = value; }
+        }
+        public GameObject ADFWOwner
+        {
+            get { return _Owner; }
+        }
         #endregion
+
+        #region Constructors
+        public ADFWStorage(string storagedesc,string storagename, int size,enumADFWStorageType storagetype, GameObject owner)
+        {
+            _StorageDesc = "";
+            _StorageName = "";
+            _StorageSize = 0;
+            _StorageType = storagetype;
+            _Owner = owner;
+        }
+        #endregion
+
+        #region Interface implementation
+        public void ItemStack(ADFWItem obj, ADFWItem target) 
+        {
+            if (obj.ADFWItemAttributes.ContainsKey(enumADFWItemAttributes.CanBeStack))
+            { 
+                //check if type is usable or misc and cast object to that 
+                
+                if (obj.ADFWItemType.ContainsKey(enumADFWItemType.Usable))
+                { 
+                    
+                }
+                if (obj.ADFWItemType.ContainsKey(enumADFWItemType.Misc))
+                { 
+                }
+
+
+            }
+        }
+        public void ItemSwitch(ADFWItem obj, ADFWItem target)
+        { }
+        public void ItemTrash(ADFWItem obj)
+        { }
+        #endregion
+
     }
 }

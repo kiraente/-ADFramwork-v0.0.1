@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace ADFramework.StorageCollections
 {
-    public class StorageChest : Storage
+    public class StorageChest : ADFWStorage
     {
 
 

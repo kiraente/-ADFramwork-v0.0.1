@@ -1,48 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ADFramework.ItemCollections;
-using ADFramework.ItemCollections.UsableItemCollections;
+using ADFramework.ItemCollections.UseableItemCollections;
 
 namespace ADFramework.StorageCollections
 {
-    public sealed class AccountStorageChest : Storage
+    public sealed class AccountStorageChest : ADFWStorage
     {
         private int _ActiveStorageSize;
-        private Item[] _StoredItems;
+        private ADFWItem[] _StoredItems;
 
-        #region Properties
-        public override string StorageName
-        {
-            get { return _StorageName; }
-            set { _StorageName = value; }
-        }
-        public override string StorageDescription
-        {
-            get { return _StorageDesc; }
-            set { _StorageDesc = value; }
-        }
-        public override string StorageType
-        {
-            get { return _StorageType; }
-            set { _StorageType = value; }
-        }
-        public override int StorageSize
-        {
-            get { return _StorageSize; }
-            set { _StorageSize = value; }
-        }
-        public override GameObject Owner
-        {
-            get { return _Owner; }
-        }
-        #endregion
 
         #region Constructor
         public AccountStorageChest(GameObject onwner)
         {
             _StorageName = "Account Shared Storage Chest";
-            _StorageType = "Account";
-            _Owner = Owner;
+            _StorageType = enumADFWStorageType.Account;
+            _Owner = ADFWOwner;
             _StorageSize = 90;
             _ActiveStorageSize = 60;
 

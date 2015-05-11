@@ -4,7 +4,7 @@ using System.Collections;
 namespace ADFramework.IStorageCollections
 {
     public interface IStorageItemStackable<T>{
-        void ItemStack(T obj, T replace);
+        void ItemStack(T obj, T target);
     }
 
     public interface IStorageItemSplitable<T>{
