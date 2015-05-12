@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-using ADFramework.StorageCollections;
-using ADFramework.IStorageCollections;
+using ADFramework.ItemCollections;
 
-public class StoragePlayer : ADFWStorage, IStorageItemTrashable<GameObject>, IStorageItemMoveable<GameObject>, IStorageItemSwitchable<GameObject>, IStorageItemStackable<GameObject>, IStorageItemSplitable<GameObject>,IStorageItemReOrganizeable
+namespace ADFramework.StorageCollections
 {
-    public void ItemTrash(GameObject obj) { 
-        Destroy(obj); 
-    }
-    public void ItemStack(GameObject obj, GameObject replace) { 
-        
-    }
-    public void ItemSplit(GameObject obj, int size) { }
-    public void ItemMove(GameObject obj, int log) { }
-    public void ItemSwitch(GameObject obj, GameObject replace) { }
-    public void ItemReOrganize() { }
+    public class StoragePlayer : ADFWStorage
+    {
+        protected ADFWItem[] _Items;
+        public StoragePlayer(GameObject owner): base("Player Inventory", "Player's Inventory on character", 30, enumADFWStorageType.Character, owner)
+        {
+            _Items = new ADFWItem[30];
 
+        }
 
+    }
 
 }

@@ -6,8 +6,8 @@ using System.Collections.Generic;
 
 namespace ADFramework.ItemCollections
 {
-    public class ADFWItem : ADFWBaseItem,IEquatable<ADFWItem> /// this is a concreate of all items in the project
-    {
+       public class ADFWItem : ADFWBaseItem,IEquatable<ADFWItem> /// this is a concreate of all items in the project
+       {
         //abstract item properties, item is concrete and inherits monobehavior from baseiteme
         protected int _Qty;
         protected Guid _ID;
@@ -43,19 +43,6 @@ namespace ADFramework.ItemCollections
         {
             get { return _Desc; }
             set { _Desc = value; }
-        }
-        public int ADFWAddToStack(ADFWItem target)
-        {
-            int tmp = _Qty + target.ADFWQuantity - _StackingQty;
-            if (tmp >0)
-            {
-                target.ADFWQuantity = _StackingQty;
-            }
-            else
-            {
-                target.ADFWQuantity = tmp;
-            }
-            return tmp;
         }
         public Dictionary<enumADFWItemAttributes, bool> ADFWItemAttributes
         {

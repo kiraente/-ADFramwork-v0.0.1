@@ -13,6 +13,7 @@ namespace ADFramework.StorageCollections
     {
         #region Members
         protected GameObject _Owner;
+        protected Guid _ID;
         #endregion
 
         #region Properties
@@ -40,37 +41,47 @@ namespace ADFramework.StorageCollections
         {
             get { return _Owner; }
         }
+        public Guid ID { get { return _ID; } }
         #endregion
 
         #region Constructors
-        public ADFWStorage() { }
-        public ADFWStorage(string storagedesc,string storagename, int size,enumADFWStorageType storagetype, GameObject owner)
+        public ADFWStorage(string storagename,string storagedesc, int size,enumADFWStorageType storagetype, GameObject owner)
         {
-            _StorageDesc = "";
-            _StorageName = "";
-            _StorageSize = 0;
+            _StorageDesc = storagedesc;
+            _StorageName = storagename;
+            _StorageSize = size;
             _StorageType = storagetype;
             _Owner = owner;
+            _ID = Guid.NewGuid();
         }
         #endregion
 
         #region Interface implementation
         public void ItemStack(ADFWItem obj, ADFWItem target) 
         {
-            if (obj.Equals(target))
+            if (obj.Equals(target) && obj.ADFWItemAttributes.ContainsKey(enumADFWItemAttributes.CanBeStack))
             {
-                if (obj.ADFWItemAttributes.ContainsKey(enumADFWItemAttributes.CanBeStack))
+                obj.ADFWQuantity = obj.ADFWQuantity + target.ADFWQuantity - obj.ADFWStackingQty;                   
+                if (obj.ADFWQuantity <= 0) 
                 {
-                    obj.ADFWQuantity = obj.ADFWAddToStack(target);
-                    if (obj.ADFWQuantity <= 0) { Destroy(obj); }
+                    target.ADFWQuantity = obj.ADFWQuantity + target.ADFWQuantity;
+                    Destroy(obj); 
                 }
-
-            }
+                else
+                {
+                    target.ADFWQuantity = target.ADFWStackingQty;                       
+                }
+             }
         }
         public void ItemSwitch(ADFWItem obj, ADFWItem target)
-        { }
+        { 
+            //need to implement.
+        }
         public void ItemTrash(ADFWItem obj)
-        { }
+        {
+            if (obj.ADFWItemAttributes.ContainsKey(enumADFWItemAttributes.CanBeDestroy))
+                Destroy(obj);
+        }
         #endregion
 
     }

@@ -3,11 +3,9 @@ using System.Collections;
 
 namespace ADFramework.StorageCollections
 {
-    public class StorageChest : ADFWStorage
+    public class StorageChest 
     {
-
-
-
+        public StorageChest() { }
     }
 }
 

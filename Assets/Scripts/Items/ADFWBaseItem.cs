@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace ADFramework.ItemCollections
 {
-    public abstract class ADFWBaseItem : MonoBehaviour
+    public abstract class ADFWBaseItem:MonoBehaviour
     {
         protected string _Name;
         protected string _Desc;

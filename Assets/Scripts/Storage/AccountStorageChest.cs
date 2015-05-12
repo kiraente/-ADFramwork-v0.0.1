@@ -12,16 +12,18 @@ namespace ADFramework.StorageCollections
 
 
         #region Constructor
-        public ADFWAccountStorageChest()
+        public ADFWAccountStorageChest(GameObject owner,int activesstoresize):base("Account storage","Account shared storage space",90,enumADFWStorageType.Account,owner)
         {
-            _StorageName = "Account Shared Storage Chest";
-            _StorageType = enumADFWStorageType.Account;
-            _Owner = ADFWOwner;
-            _StorageSize = 90;
-            _ActiveStorageSize = 60;
-
+            _ActiveStorageSize = activesstoresize;
+            _StoredItems = new ADFWItem[activesstoresize];
+            InitalizeStoreItems();
         }
         #endregion
+
+        private void InitalizeStoreItems()
+        {
+            
+        }
 
     }
 }
