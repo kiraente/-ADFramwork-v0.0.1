@@ -62,11 +62,13 @@
     <Compile Include="Assets\Scripts\Items\ADFWBaseItem.cs" />
     <Compile Include="Assets\Scripts\Items\ADFWItem.cs" />
     <Compile Include="Assets\Scripts\Items\Armor\ADFWArmor.cs" />
+    <Compile Include="Assets\Scripts\Items\Database\Item.cs" />
+    <Compile Include="Assets\Scripts\Items\Database\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\Items\Usable\ADFWArmorEnchantement.cs" />
     <Compile Include="Assets\Scripts\Items\Usable\ADFWUsableItem.cs" />
     <Compile Include="Assets\Scripts\Items\Usable\ADFWWeaponEnchantment.cs" />
-    <Compile Include="Assets\Scripts\Items\Usable\Potions\ADFWHealthPotion.cs" />
     <Compile Include="Assets\Scripts\Items\Usable\Potions\ADFWManaPotion.cs" />
+    <Compile Include="Assets\Scripts\Items\Usable\Potions\ADFWPotion.cs" />
     <Compile Include="Assets\Scripts\Items\Usable\Potions\ADFWStarterHealthPotion.cs" />
     <Compile Include="Assets\Scripts\Items\Weapon\ADFWWeapon.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
