@@ -16,4 +16,5 @@ public class Item  {
 
     public Dictionary<enumADFWItemAttributes, bool> _ItemAttributes;
     public Dictionary<enumADFWItemType, bool> _ItemType;
+
 }
