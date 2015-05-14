@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using ADFramework.ItemCollections;
 public class ItemDatabase : MonoBehaviour {
     protected List<ADFWItem> _Items = new List<ADFWItem>();
-
+    protected bool _IsReady = false;
     public ItemDatabase()
     {
             //create item
@@ -13,6 +13,7 @@ public class ItemDatabase : MonoBehaviour {
                 new ADFramework.ItemCollections.UseableItemCollections.Potions.ADFWStarterHealthPotion(20,20,99),
                 new ADFramework.ItemCollections.UseableItemCollections.Potions.ADFWStarterHealthPotion(40,40,50)
         });
+        _IsReady = true;
     }
     public ADFWItem ItemAt(int idx)
     {
@@ -21,5 +22,9 @@ public class ItemDatabase : MonoBehaviour {
         else
             return null;
     }    
+    public bool IsReady()
+    {
+        return _IsReady;
+    }
 
 }
