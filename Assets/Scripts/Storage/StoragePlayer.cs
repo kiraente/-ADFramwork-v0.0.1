@@ -31,9 +31,9 @@ namespace ADFramework.StorageCollections
                 for (int i = 0; i < 30; i++)
                 {
                     if (_PCInventory[i] != null)
-                        GUI.Label(new Rect(10, i * 20, 200, 50), _PCInventory[i].ADFWName);
+                        GUI.Label(new Rect(10*i, 20, 200, 50), _PCInventory[i].ADFWName);
                     else
-                        GUI.Label(new Rect(10, i * 20, 200, 50), "empty");
+                        GUI.Label(new Rect(10*i,  20, 200, 50), "empty");
                 }
             }
             
